@@ -1,5 +1,5 @@
 - name: Setup the expense
-  hosts: all
+  hosts: webserver
   become: yes
   vars: 
     project_name: expense
