@@ -13,7 +13,7 @@
     state: present
 
 - name: change the default root password of mysql
-  ansible.builtin.shell: mysql_secure_installation --set-root-pass "$MYSQL_ROOT_PASSWORD"
+  ansible.builtin.shell: mysql_secure_installation --set-root-pass {{MYSQL_ROOT_PASSWORD}}
 
 - name: restart the services
   ansible.builtin.systemd:
