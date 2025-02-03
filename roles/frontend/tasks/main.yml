@@ -12,7 +12,7 @@
     dest: /etc/nginx/default.d/expense.conf
     
 - name: import the common role
-  ansible.builtin.importa_role:
+  ansible.builtin.import_role:
     name: common
     tasks_from: app-req
   vars:
