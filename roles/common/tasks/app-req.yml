@@ -1,0 +1,14 @@
+- name: delete the app directory
+  ansible.builtin.file:
+     path: "{{app_dir}}"
+     state: absent
+
+- name: create the app directory
+  ansible.builtin.file:
+     path: "{{app_dir}}"
+     state: directory
+
+- name: download the application code to the created the app directory
+  ansible.builtin.unarchive:
+     src: https://expense-artifacts.s3.amazonaws.com/{{component}}.zip
+     dest: "{{app_dir}}"

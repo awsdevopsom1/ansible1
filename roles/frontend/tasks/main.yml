@@ -1,0 +1,26 @@
+- name: sethostname 
+  ansible.builtin.shell: set-hostname {{env}}-{{component}}
+
+- name: install the nginx
+  ansible.builtin.dnf:
+    name: nginx
+    state: present
+
+- name: copy the expense.conf file
+  ansible.builtin.template:
+    src: expense.conf
+    dest: /etc/nginx/default.d/expense.conf
+    
+- name: import the common role
+  ansible.builtin.import:
+    name: common
+    tasks_from: app-req
+  vars:
+    app_dir: /usr/share/nginx/html
+    component: frontend
+
+- name: enable and start the services
+  ansible.builtin.systemd:
+     name: nginx
+     state: restarted
+     enabled: yes
