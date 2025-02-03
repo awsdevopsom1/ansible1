@@ -1,0 +1,7 @@
+- name: Setup the expense
+  hosts: all
+  become: yes
+  vars: 
+    project_name: expense
+  roles:
+    - "{{ role_name }}"  
