@@ -36,7 +36,7 @@
     state: present
 
 - name: load the schema
-  ansible.builtin.shell: mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql 
+  ansible.builtin.shell: mysql -h 172.31.91.92 -uroot -p{{MYSQL_ROOT_PASSWORD}} < /app/schema/backend.sql 
 
 - name: restart the backend services
   ansible.builtin.systemd:
