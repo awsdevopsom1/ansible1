@@ -1,5 +1,5 @@
 - name: set set-hostname
-  ansible.builtin.shell: sethostname {{env}}-component
+  ansible.builtin.shell: set-hostname {{env}}-{{component}}
 
 
 - name: disable the nodejs default
