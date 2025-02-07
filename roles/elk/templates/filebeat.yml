@@ -154,7 +154,6 @@ setup.kibana:
 
 # ------------------------------ Logstash Output -------------------------------
 output.logstash:
-  The Logstash hosts
   hosts: ["172.31.25.209:5044"]
 
   # Optional SSL. By default is off.
