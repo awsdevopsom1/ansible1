@@ -1,3 +1,8 @@
+- name: copy the json dashboard
+  ansible.builtin.templates:
+     src: dashboard.json  
+     dest: /tmp/dashboard.json
+
 - name: Import Grafana dashboard foo
   community.grafana.grafana_dashboard:
     grafana_url: http://172.31.32.121:3000
@@ -6,3 +11,5 @@
     commit_message: Updated by ansible
     overwrite: true
     path: /tmp/dashboard.json
+
+
