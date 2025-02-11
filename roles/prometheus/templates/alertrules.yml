@@ -1,12 +1,12 @@
 groups:
-- name: node_exporter
-   labels:
-    team: myteam
-   rules:
-   - alert: instance down alert
-     expr: up < 1
-     for: 1m
-     labels:
-      severity: page
-     annotations:
-      summary: Instance down alert
+  - name: node_exporter
+    labels:
+      team: myteam
+    rules:
+      - alert: instance down alert
+        expr: up < 1
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: Instance down alert
