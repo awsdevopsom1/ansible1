@@ -23,6 +23,10 @@
   ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat 
+- name: import the common role
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node-exporter     
 
 - name: enable and start the services
   ansible.builtin.systemd:
