@@ -2,6 +2,10 @@
   ansible.builtin.template:
      src: prometheus.yml
      dest: /opt/prometheus/prometheus.yml
+- name: copy the alert rules
+  ansible.builtin.template:
+     src: alertrules.yml
+     dest: /opt/prometheus/alertrules.yml
 
 - name: restart the services
   ansible.builtin.systemd:
