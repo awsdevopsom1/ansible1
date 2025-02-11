@@ -9,5 +9,5 @@ groups:
         labels:
           severity: page
         annotations:
-          summary: "Instance {{ $labels.instance }} is down"
-          description: "The instance {{ $labels.instance }} has been unreachable f
+          summary: instance down
+          
