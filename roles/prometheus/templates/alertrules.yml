@@ -4,7 +4,7 @@ groups:
     team: myteam
   rules:
   - alert: instance down alert
-    expr: up < 0
+    expr: up < 1
     for: 1m
     labels:
       severity: page
