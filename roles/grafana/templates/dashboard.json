@@ -76,7 +76,7 @@
         "targets": [
           {
             "editorMode": "code",
-            "expr": "up{name = \"frontend\"}",
+            "expr": "up{name = \"{{component}}\"}",
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
@@ -169,7 +169,7 @@
         "targets": [
           {
             "editorMode": "code",
-            "expr": "(node_memory_MemFree_bytes{name=\"frontend\"} + node_memory_Buffers_bytes {name= \"frontend\"} + node_memory_Cached_bytes{name = \"frontend\"})/ node_memory_MemTotal_bytes {name=\"frontend\"} * 100 ",
+            "expr": "(node_memory_MemFree_bytes{name=\"{{component}}\"} + node_memory_Buffers_bytes {name= \"{{component}}\"} + node_memory_Cached_bytes{name = \"{{component}}\"})/ node_memory_MemTotal_bytes {name=\"{{component}}\"} * 100 ",
             "legendFormat": "__auto",
             "range": true,
             "refId": "A"
@@ -191,7 +191,7 @@
             "text": "prometheus",
             "value": "decpeqijnhptsf"
           },
-          "name": "frontend",
+          "name": "{{component}}",
           "options": [],
           "query": "prometheus",
           "refresh": 1,
@@ -206,7 +206,7 @@
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "frontend",
+    "title": "{{component}}",
     "uid": "decpf0evy12bkb",
     "version": 15,
     "weekStart": ""
