@@ -6,4 +6,11 @@
 - name: copy the service file
   ansible.builtin.template:
      src: node-exporter.service
-     dest:
+     dest: /etc/systemd/system/node-exporter.service
+- name: restart the services
+  ansible.builtin.systemd:
+     name: node-exporter
+     state: restarted
+     enabled: yes
+     daemon-reload: yes
+     

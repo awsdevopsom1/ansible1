@@ -2,7 +2,7 @@
 Description=node-exporter
 
 [Service]
-ExecStart=/bin/bash /usr/sbin/example.sh
+ExecStart=/opt/node_exporter-1.8.2.linux-amd64/node_exporter 
 
 [Install]
 WantedBy=multi-user.target
