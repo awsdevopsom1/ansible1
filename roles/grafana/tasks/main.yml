@@ -1,5 +1,5 @@
 - name: copy the json dashboard
-  ansible.builtin.templates:
+  ansible.builtin.template:
      src: dashboard.json  
      dest: /tmp/dashboard.json
 
