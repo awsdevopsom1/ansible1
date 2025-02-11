@@ -3,10 +3,11 @@ groups:
     labels:
       team: myteam
     rules:
-      - alert: instance down alert
+      - alert: InstanceDown
         expr: up < 1
         for: 1m
         labels:
           severity: page
         annotations:
-          summary: Instance down alert
+          summary: "Instance {{ $labels.instance }} is down"
+          description: "The instance {{ $labels.instance }} has been unreachable f
