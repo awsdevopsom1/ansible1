@@ -1,13 +1,10 @@
 groups:
-  - name: node_exporter
-    labels:
-      team: myteam
+  - name: example-rules
     rules:
-      - alert: InstanceDown
-        expr: up < 1
-        for: 1m
-        labels:
-          severity: page
+      - alert: HighMemoryUsage
+        expr: node_memory_Active_bytes > 1000000000
+        for: 5m
         annotations:
-          summary: instance down
-          
+          description: "Memory usage is too high on the node."
+        labels:
+          severity: critical
